@@ -1,0 +1,83 @@
+<html>
+    <head >
+        <title>
+            Image Slideshow
+        </title>
+        <style>
+            .container{
+                width: fit-content;
+                margin: 50px auto;
+               
+            }
+            .slide {
+                width: 600px;
+                height: 400px;
+                object-fit: cover;
+                
+                
+            }
+            .icon-action{
+                height: 80px;
+               transition: 0.56;
+               position: absolute;
+                cursor: pointer;
+                 top: 40px;
+            }
+            .icon-right{
+                
+                right: 0;
+                margin-right: 250px;
+               margin-top: 150px;
+            }
+            .icon-right:hover{
+                transform: scale(0.8) ;
+            }
+            .icon-left{
+                left: 0;
+                margin-left: 250px;
+                margin-top: 150px;
+            }
+            .icon-left:hover{
+                transform: scale(0.8) ;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img src="./img/blue-black-peacock.jpg" class="slide" id="slide"/>
+            <img src="./img/left.png" class="icon-left  icon-action" onclick="left()"/>
+            <img src="./img/right.png" class="icon-right  icon-action" onclick="right()"/>
+
+
+        </div>
+
+
+<script>
+    const images=["img/blue-black-peacock.jpg","img/peacock-1-jpg" ,"img/peacock-2-jpg","img/peacock-3-jpg" ,"img/peacock-4-jpg" ,"img/peacock-5-jpg"];
+        const slide=document.getElementById(`slide`);
+        let index=0;
+        function right(){
+          if(index<images.length -1){
+            index++;
+          } 
+          else{
+            index=0
+          }
+          slide.src=images[index]
+
+        }
+        
+        function left(){
+          if(index>0){
+            index--;
+          } 
+          else{
+            index=images.length -1;
+          }
+          slide.src=images[index]
+        }
+       
+    
+</script>
+    </body>
+</html>
